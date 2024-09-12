@@ -33,10 +33,19 @@ void GenerateLinkTree(TreeNode* root) {
 
 }
 
+void LinkOrders(TreeNode* root) {
+	printf("LinkPreOrder: ");
+	LinkPreOrder(root);
+	printf("LinkInOrder: ");
+	LinkInOrder(root);
+	printf("LinkPostOrder: ");
+	LinkPostOrder(root);
+}
+
 main() {
 	TreeNode* root = (TreeNode*)malloc(sizeof(TreeNode));
 	root->data = 1;
 
 	GenerateLinkTree(root);
-	LinkInOrder(root);
+	LinkOrders(root);
 }

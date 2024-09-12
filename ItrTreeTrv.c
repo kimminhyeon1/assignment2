@@ -3,6 +3,21 @@
 #include "Stack.h"
 #include "ItrTreeTrv.h"
 
+void LinkPreOrder(TreeNode* root) {
+	LinkedStackType s;
+	TreeNode* nptr = root;
+
+	init(&s);
+
+	push(&s, nptr);
+	printf("push(%d) ", nptr->data);
+	while (!is_empty(&s)) {
+		nptr = s.top;
+		pop(&s);
+		printf("pop(%d) ", nptr->data);
+	}
+}
+
 void LinkInOrder(TreeNode* root) {
 	LinkedStackType s;
 	TreeNode* nptr = root;
@@ -17,7 +32,7 @@ void LinkInOrder(TreeNode* root) {
 		}
 
 		nptr = pop(&s);
-		printf("pop(%d) visit(%d)", nptr->data, nptr->data);
+		printf("pop(%d) visit(%d)\n", nptr->data, nptr->data);
 
 		nptr = nptr->right;
 	}
