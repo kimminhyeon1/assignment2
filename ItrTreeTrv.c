@@ -12,7 +12,7 @@ void LinkInOrder(TreeNode* root) {
 	while (nptr != NULL || !is_empty(&s)) {
 		while (nptr != NULL) {
 			push(&s, nptr);
-			printf("push(%d)", nptr->data);
+			printf("push(%d) ", nptr->data);
 			nptr = nptr->left;
 		}
 
